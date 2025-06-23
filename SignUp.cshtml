@@ -1,0 +1,202 @@
+﻿<div class="signup-container">
+    <div class="signup-form">
+        <h2 class="form-title">CREATE ACCOUNT</h2>
+
+        <form method="post" action="@Url.Action("SignUp", "Home")" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="Förnamn" name="Förnamn" required class="form-input" />
+                    <label for="Förnamn" class="form-label">First Name</label>
+                    <div class="form-line"></div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="Efternamn" name="Efternamn" required class="form-input" />
+                    <label for="Efternamn" class="form-label">Last Name</label>
+                    <div class="form-line"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="Username" name="Username" required class="form-input" />
+                <label for="Username" class="form-label">Username</label>
+                <div class="form-line"></div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="password" id="Password" name="lösenord" required class="form-input" />
+                    <label for="Password" class="form-label">Password</label>
+                    <div class="form-line"></div>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="Mail" name="Mail" required class="form-input" />
+                    <label for="Mail" class="form-label">Email</label>
+                    <div class="form-line"></div>
+                </div>
+            </div>
+
+            <div class="form-group file-group">
+                <label for="file" class="file-label">
+                    <span>Profile Image</span>
+                    <input type="file" id="file" name="file" accept="image/*" class="file-input" />
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">REGISTER</button>
+        </form>
+
+        <p class="login-link">
+            Already have an account? <a href="@Url.Action("Log", "Home")">LOG IN</a>
+        </p>
+    </div>
+</div>
+
+<style>
+    :root {
+        --black: #000000;
+        --white: #FFFFFF;
+        --gray-dark: #222222;
+        --gray-medium: #444444;
+        --gray-light: #888888;
+    }
+
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        background-color: var(--white);
+        color: var(--black);
+        margin: 0;
+        padding: 0;
+    }
+
+    .signup-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+    }
+
+    .signup-form {
+        width: 100%;
+        max-width: 600px; 
+        border: 1px solid var(--black);
+        padding: 3rem;
+    }
+
+    .form-title {
+        text-align: center;
+        font-size: 1.75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 0.5rem 0;
+        border: none;
+        border-bottom: 1px solid var(--black);
+        background-color: transparent;
+        font-size: 1rem;
+        outline: none;
+    }
+
+    .form-label {
+        position: absolute;
+        top: 0.5rem;
+        left: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .form-input:focus ~ .form-label,
+    .form-input:valid ~ .form-label {
+        top: -1rem;
+        font-size: 0.7rem;
+    }
+
+    .form-line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--black);
+        transition: width 0.3s ease;
+    }
+
+    .form-input:focus ~ .form-line {
+        width: 100%;
+    }
+
+    .file-group {
+        margin-top: 2.5rem;
+    }
+
+    .file-label {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+        cursor: pointer;
+    }
+
+    .file-input {
+        display: none;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 1rem;
+        margin-top: 2rem;
+        background-color: var(--black);
+        color: var(--white);
+        border: none;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .submit-btn:hover {
+            background-color: var(--gray-dark);
+        }
+
+    .login-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+    }
+
+        .login-link a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+        }
+</style>

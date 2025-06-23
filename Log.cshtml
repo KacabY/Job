@@ -1,0 +1,111 @@
+﻿<div id="create2">
+    <h2>Log In</h2>
+    <form method="post" action="@Url.Action("Log", "Home")" enctype="multipart/form-data">
+
+        <label for="Username">Username:</label>
+        <input type="text" id="Username" name="Username" required /><br />
+
+        <label for="Password">Password:</label>
+        <input type="password" id="Password" name="lösenord" required /><br />
+
+        <input type="submit" value="Log in" />
+    </form>
+    <p style="text-align: center; margin-top: 20px;">
+        Don't have an account? <a href="@Url.Action("SignUp", "Home")" style="color: #007bff; text-decoration: none;">Sign Up</a>
+    </p>
+</div>
+
+<style>
+    :root {
+        --black: #000000;
+        --white: #FFFFFF;
+        --gray-dark: #222222;
+        --gray-light: #e0e0e0;
+    }
+
+    #create2 {
+        border: 1px solid var(--black);
+        border-radius: 0;
+        padding: 2.5rem;
+        width: 100%;
+        max-width: 500px;
+        margin: 10vh auto 0 auto;
+        background-color: var(--white);
+    }
+
+        #create2 h2 {
+            font-size: 1.75rem;
+            color: var(--black);
+            margin-bottom: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-weight: 400;
+        }
+
+        #create2 label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--black);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05rem;
+        }
+
+        #create2 input[type="text"],
+        #create2 input[type="password"] {
+            width: 100%;
+            padding: 0.75rem 0;
+            margin-bottom: 2rem;
+            border: none;
+            border-bottom: 1px solid var(--black);
+            background-color: transparent;
+            font-size: 1rem;
+            outline: none;
+        }
+
+            #create2 input[type="text"]:focus,
+            #create2 input[type="password"]:focus {
+                border-bottom: 1px solid var(--black);
+            }
+
+        #create2 input[type="submit"] {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+            #create2 input[type="submit"]:hover {
+                background-color: var(--gray-dark);
+            }
+
+        #create2 p {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--black);
+        }
+
+        #create2 a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+            #create2 a:hover {
+                border-bottom: 1px solid var(--black);
+            }
+</style>

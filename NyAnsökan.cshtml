@@ -1,0 +1,48 @@
+﻿@model LJOB.Models.jobModel
+@{
+    ViewData["Title"] = "Ny Ansökan";
+}
+
+<div  class="Job">
+ <form method="post" action="@Url.Action("Job", "Home")" enctype="multipart/form-data">
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jobTitle" name="jobTitle" required />
+        <br />
+
+        <label for="company">Company:</label>
+        <input type="text" id="company" name="company" required />
+        <br />
+
+        <label for="location">Location:></label>
+        <input type="text" id="location" name="location" required />
+        <br />
+
+        <label for="position">Position</label>
+        <input type="text" id="position" name="position" required>
+        <br />
+           
+
+        <label for="salary">Salary:</label>
+        <input type="range" id="salary" name="salary" min="20000" max="100000" step="1000" value="50000"
+               oninput="document.getElementById('salaryValue').textContent = this.value" />
+        <span id="salaryValue">50000</span> Kr
+        <br />
+
+        <label for="description">Description:</label>
+         <textarea id="description" name="description" rows="4" cols="50"></textarea>
+        <br />
+
+        <button type="submit">Submit</button>
+
+
+
+
+
+
+
+
+
+
+
+</form>
+</div>
